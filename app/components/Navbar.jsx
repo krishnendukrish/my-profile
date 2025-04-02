@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false)
 
   return (
-    <div className="w-full  justify-between flex p-6 sticky top-0 z-50">
+    <div className="w-full  justify-between flex p-6 sticky top-0 z-50 bg-[#EFF1FF]">
       <div className="flex gap-3 items-center">
         <Image
           className="w-9 h-10 rounded-full object-cover "
@@ -18,7 +18,13 @@ const Navbar = () => {
         <span className="text-2xl font-bold">Krishnendu.K</span>
       </div>
       <Image
-        onClick={() => setMenuOpen(!isMenuOpen)}
+        onClick={() => {
+          setMenuOpen(!isMenuOpen)
+          const element = document.getElementById(id)
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" })
+          }
+        }}
         className="w-9 h-10 rounded-full object-cover md:hidden block"
         height={25}
         width={25}
